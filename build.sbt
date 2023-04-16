@@ -50,7 +50,9 @@ lazy val coreCE2 = project
   .settings(
     defaultSettings,
     name := "tofu-core-ce2",
-    libraryDependencies += catsEffect2
+    libraryDependencies += catsEffect2,
+    Test / fork := true,
+    Test / envVars += "TEST_ENV" -> "EXPECTED_VALUE",
   )
 
 lazy val concurrentCE2 =
@@ -70,7 +72,9 @@ lazy val coreCE3 = project
   .settings(
     defaultSettings,
     name := "tofu-core-ce3",
-    libraryDependencies += catsEffect3
+    libraryDependencies += catsEffect3,
+    Test / fork := true,
+    Test / envVars += "TEST_ENV" -> "EXPECTED_VALUE",
   )
 
 lazy val kernelCatsMtlInterop = project
